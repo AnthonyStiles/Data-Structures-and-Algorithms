@@ -72,3 +72,14 @@ Console.WriteLine();
 
 Console.WriteLine("Tree Search:");
 Console.WriteLine(BreadthFirstTreeSearch<int>.Find(38, root));
+Console.WriteLine();
+
+Console.WriteLine("Tree Compare");
+TreeNode<int> levelTwoRightb = new TreeNode<int>(){ Value = 38};
+TreeNode<int> levelTwoLeftb = new TreeNode<int>(){ Value = 57};
+TreeNode<int> levelOneRightb = new TreeNode<int>(){ Value = 11};
+TreeNode<int> levelOneLeftb = new TreeNode<int>(){ Value = 10, Left = levelTwoLeftb, Right = levelTwoRightb};
+TreeNode<int> rootb = new TreeNode<int>(){ Value = 5, Left = levelOneLeftb, Right = levelOneRightb};
+Console.WriteLine(BinaryTreeComparison<int>.Compare(root, rootb));
+levelOneLeftb.Left = null;
+Console.WriteLine(BinaryTreeComparison<int>.Compare(root, rootb));
