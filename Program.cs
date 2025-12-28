@@ -1,4 +1,5 @@
-﻿using DSA;
+﻿using System.Collections;
+using DSA;
 
 
 int[] array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -57,3 +58,12 @@ int[] quickSortArray = [ 1, 5, 2, 8, 4, 9, 10 ];
 Console.WriteLine($"Unsorted array {string.Join(",", quickSortArray)}");
 QuickSort.Run(quickSortArray, 0, quickSortArray.Length - 1);
 Console.WriteLine($"Sorted array {string.Join(",", quickSortArray)}");
+Console.WriteLine();
+
+Console.WriteLine("Tree Traversal:");
+TreeNode<int> levelTwoRight = new TreeNode<int>(){ Value = 38};
+TreeNode<int> levelTwoLeft = new TreeNode<int>(){ Value = 57};
+TreeNode<int> levelOneRight = new TreeNode<int>(){ Value = 11};
+TreeNode<int> levelOneLeft = new TreeNode<int>(){ Value = 10, Left = levelTwoLeft, Right = levelTwoRight};
+TreeNode<int> root = new TreeNode<int>(){ Value = 5, Left = levelOneLeft, Right = levelOneRight};
+Console.WriteLine(string.Join(",", TreeTraversal<int>.Traverse(root)));
