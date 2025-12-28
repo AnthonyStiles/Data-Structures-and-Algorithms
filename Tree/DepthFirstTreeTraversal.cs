@@ -1,6 +1,6 @@
-namespace DSA;
+namespace DSA.Tree;
 
-public static class TreeTraversal<T>
+public static class DepthFirstTreeTraversal<T>
 {
     public static List<T> Traverse(TreeNode<T> root)
     {
@@ -20,11 +20,4 @@ public static class TreeTraversal<T>
         Walk(node.Left, values);
         Walk(node.Right, values);
     }
-}
-
-public class TreeNode<T>
-{
-    public required T Value { get; set; }
-    public TreeNode<T>? Left { get; set; }
-    public TreeNode<T>? Right { get; set; }
 }

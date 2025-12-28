@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using DSA;
+using DSA.Tree;
 
 
 int[] array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -66,4 +67,8 @@ TreeNode<int> levelTwoLeft = new TreeNode<int>(){ Value = 57};
 TreeNode<int> levelOneRight = new TreeNode<int>(){ Value = 11};
 TreeNode<int> levelOneLeft = new TreeNode<int>(){ Value = 10, Left = levelTwoLeft, Right = levelTwoRight};
 TreeNode<int> root = new TreeNode<int>(){ Value = 5, Left = levelOneLeft, Right = levelOneRight};
-Console.WriteLine(string.Join(",", TreeTraversal<int>.Traverse(root)));
+Console.WriteLine(string.Join(",", DepthFirstTreeTraversal<int>.Traverse(root)));
+Console.WriteLine();
+
+Console.WriteLine("Tree Search:");
+Console.WriteLine(BreadthFirstTreeSearch<int>.Find(38, root));
