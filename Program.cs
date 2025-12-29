@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using DSA;
+using DSA.Heap;
 using DSA.Tree;
 
 
@@ -83,3 +84,13 @@ TreeNode<int> rootb = new TreeNode<int>(){ Value = 5, Left = levelOneLeftb, Righ
 Console.WriteLine(BinaryTreeComparison<int>.Compare(root, rootb));
 levelOneLeftb.Left = null;
 Console.WriteLine(BinaryTreeComparison<int>.Compare(root, rootb));
+Console.WriteLine();
+
+Console.WriteLine("Min Heap");
+Heap heap = new Heap();
+heap.Insert(1);
+heap.Insert(2);
+heap.Insert(6);
+Console.WriteLine(heap.Delete());
+Console.WriteLine(heap.Delete());
+Console.WriteLine(heap.Delete());
