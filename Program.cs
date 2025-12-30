@@ -105,3 +105,15 @@ List<List<int>> adjacencyMatrix =
         [0, 0, 0]
     ];
 Console.WriteLine($"Path to 2: {string.Join(",", BreadthFirstSearchAdjacencyMatrix.Search(adjacencyMatrix, 0, 2))}");
+Console.WriteLine();
+
+Console.WriteLine("Dijkstra's shortest path:");
+List<List<GraphEdge>> adjacencyList = 
+    [
+        [new(){ To = 1, Weight = 1 }, new(){ To = 2, Weight = 5 }],
+        [new(){ To = 2, Weight = 7 }, new(){ To = 3, Weight = 6 }],
+        [new(){ To = 4, Weight = 1 }],
+        [new(){ To = 2, Weight = 1 }],
+        []
+    ];
+Console.WriteLine($"Shortest path to 4: {string.Join(",", DijkstraList.GetShortestPath(0, 4, adjacencyList))}");
