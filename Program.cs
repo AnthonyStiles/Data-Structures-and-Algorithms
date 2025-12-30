@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using DSA;
+using DSA.Graph;
 using DSA.Heap;
 using DSA.Tree;
 
@@ -94,3 +95,13 @@ heap.Insert(6);
 Console.WriteLine(heap.Delete());
 Console.WriteLine(heap.Delete());
 Console.WriteLine(heap.Delete());
+Console.WriteLine();
+
+Console.WriteLine("Adjacency Matrix Breadth First Search:");
+List<List<int>> adjacencyMatrix = 
+    [
+        [0, 1, 0],
+        [0, 0, 2],
+        [0, 0, 0]
+    ];
+Console.WriteLine($"Path to 2: {string.Join(",", BreadthFirstSearchAdjacencyMatrix.Search(adjacencyMatrix, 0, 2))}");
